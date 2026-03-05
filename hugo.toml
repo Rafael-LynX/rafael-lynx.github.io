@@ -1,4 +1,45 @@
-baseURL = 'https://github.com/Rafael-LynX/rafael.github.io'
-languageCode = 'en-us'
-title = 'My blog'
+# URL
+baseURL = "https://rafael-lynx.github.io"
+
+# Linguagem do código
+languageCode = 'pt-br'
+
+# Título do blog e tema
+title = 'rafael-lynx info-sec'
 theme = "risotto"
+
+[pagination]
+pagerSize = 3
+
+# 
+[params]
+noindex = false
+
+# color theme
+[params.theme]
+palette = "tokyo-night-dark"
+
+[params.about]
+title = "risotto"
+description = "A"
+logo = "----"
+
+[[params.socialLinks]]
+icon = "fa-brands fa-github"
+title = "Github"
+url = "https://"
+
+# menu que define as paginas aparecerem
+[menu]
+	[[menu.main]]
+		identifier = "about"
+		name = "About"
+		url = "/about/"
+		weight = 1
+
+
+	[[menu.main]]
+		identifier = "posts"
+		name = "Posts"
+		url = "/posts/"
+		weight = 2
