@@ -40,4 +40,4 @@
 {{ end }}
 {{ with .Site.LanguageCode}}<meta property="og:locale" content="{{ . }}" />{{ end }}
 {{ with .Site.Params.about }}<meta property="og:image" content="{{ with .logo_image }}{{ . | absURL }}{{ end }}" />{{ end }}
-<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
