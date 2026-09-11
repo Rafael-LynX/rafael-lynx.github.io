@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compiled on rafael-lynx info-sec</title>
+    <link>http://localhost:1313/tags/compiled/</link>
+    <description>Recent content in Compiled on rafael-lynx info-sec</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <copyright>© [Rafael Vieira](https://github.com/Rafael-LynX)</copyright>
+    <lastBuildDate>Wed, 09 Sep 2026 15:21:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/compiled/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artigo - Tryhackme: Compiled</title>
+      <link>http://localhost:1313/posts/artigo-tryhackme-compiled/</link>
+      <pubDate>Wed, 09 Sep 2026 15:21:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/artigo-tryhackme-compiled/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/images/compiled.png&#34; alt=&#34;Compiled&#34; style=&#34;display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);&#34;&gt;&#xA;&lt;p&gt;Olá meu nome é Rafael e estarei hoje escrevendo e mostrando o jeito que fiz o desafio compiled do tryhackme.&lt;/p&gt;&#xA;&lt;p&gt;link: &lt;a href=&#34;https://tryhackme.com/room/compiled&#34;&gt;https://tryhackme.com/room/compiled&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;arquivo-compiled&#34;&gt;Arquivo Compiled&lt;/h1&gt;&#xA;&lt;p&gt;O desafio começa quando você baixa o arquivo do desafio, seu nome &lt;code&gt;Compiled-1688545393558.Compiled&lt;/code&gt; arquivo com uma extensão que nunca tinha visto. Ele fala que é para executar esse arquivo, utilizando &lt;code&gt;./Compiled-1688545393558.Compiled&lt;/code&gt; consegui executar, porém ele pede uma senha.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><title>Artigo - Tryhackme: Compiled &ndash; rafael-lynx info-sec</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/palettes/tokyo-night-dark.css">
+<link rel="stylesheet" href="http://localhost:1313/css/risotto.css">
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Artigo - Tryhackme: Compiled &ndash; rafael-lynx info-sec" />
+<meta property="og:url" content="http://localhost:1313/posts/artigo-tryhackme-compiled/" />
+
+  <meta property="og:description" content="Essa é a minha versão de artigo feita sobre à máquina compiled do tryhackme &ndash; "/> 
+
+<meta property="og:locale" content="pt-br" />
+<meta property="og:image" content="http://localhost:1313/images/icons8-console-32.png" />
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="http://localhost:1313/" class="page__logo-inner">rafael-lynx info-sec</a></h1></li>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="http://localhost:1313/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="http://localhost:1313/posts/" title="">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Artigo - Tryhackme: Compiled</h1>
+    </header>
+    <div class="content__body">
+        <img src="/images/compiled.png" alt="Compiled" style="display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+<p>Olá meu nome é Rafael e estarei hoje escrevendo e mostrando o jeito que fiz o desafio compiled do tryhackme.</p>
+<p>link: <a href="https://tryhackme.com/room/compiled">https://tryhackme.com/room/compiled</a></p>
+<h1 id="arquivo-compiled">Arquivo Compiled</h1>
+<p>O desafio começa quando você baixa o arquivo do desafio, seu nome <code>Compiled-1688545393558.Compiled</code> arquivo com uma extensão que nunca tinha visto. Ele fala que é para executar esse arquivo, utilizando <code>./Compiled-1688545393558.Compiled</code> consegui executar, porém ele pede uma senha.</p>
+<p><img src="/images/exec-compiled.png" alt="exec-compiled"></p>
+<h1 id="tentativas">Tentativas</h1>
+<p>Primeira coisa que tentei foi tudo que conseguia pensar e estava na minha frente, como Compiled e 1688545393558, porém todos deram <code>Try again!</code>. Depois tentei ver as propriedades do arquivo e não achei nada demais. Então tentei abrir o arquivo com <code>nano</code> e <code>nvim</code> porém só tinhas algumas palavras jogadas e o resto não estava entendível.</p>
+<h1 id="entendendo">Entendendo</h1>
+<p>Acabei indo atrás de outra forma de abrir ele, pesquisando por sua extensão, achei o site <a href="https://filext.com/file-extension/COMPILED">Filext</a> ele me explicou o que era extensão <code>.Compiled</code>. Os arquivos compilados são uma representação mais adequada para ser executada ou carregada de algum código. E o site permitia abrir os arquivos compilados.</p>
+<h1 id="tentando-novamente">Tentando Novamente</h1>
+<p><img src="/images/filext-exec-compiled.png" alt="filext-exec-compiled"></p>
+<p>O arquivo abriu e nos mostrou todos arquivos que estavam dentro, cliquei em cada um para ver o que tinha dentro, a grande maioria não tinha nada de mais, porém o arquivo <code>.rodata</code> tinha uma senha.</p>
+<p><img src="/images/rodata-senha.png" alt="rodata-senha"></p>
+<p>Primeira coisa que veio na minha cabeça foi achei, e fui testar a senha executando o arquivo. Contudo não funcionou, tentei de várias formas tirando o porcentagem colocando outra letra, deixando ele, etc. Mas nada funcionou, quando coloquei as respostas que vinha na minha mente tanto no arquivo quanto no próprio tryhackme. O bot deles me deu uma dica, sem querer hehe.</p>
+<img src="/images/giphy.gif" alt="emote-malicious" style="display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+<h1 id="novo-caminho">Novo caminho</h1>
+<p>A dica do bot era, utilize <code>ghidra</code>, uma ferramenta que também nunca utilizei, ela é uma ferramenta open source que faz engenharia reversa, ela foi criada pela <strong>NSA(National Security Agency/Central Security Service)</strong>.</p>
+<p>Então optei por usar o ghidra para abrir o arquivo e conseguir realizar o desafio. Mas o que exatamente o ghidra vai fazer de diferente para eu conseguir achar a senha?</p>
+<h1 id="ghidra">Ghidra</h1>
+<p>O ghidra utiliza a engenharia reversa para transformar os bytes do arquivo compilado no pseudocódigo exibido ao lado.</p>
+<p><img src="/images/ghidra-open-compiled.png" alt="ghidra-open-compiled"></p>
+<p>Basicamente ela faz o caminho ao contrario, ela vai ler de forma diferente e separar os dados para que possa ficar entendível. Ele pega o arquivo <code>.compiled</code> lê as instruções brutas em formato hexadecimal por exemplo: <code>48 8d 05 56 0e 00 00</code> e traduz para instruções em assembly legíveis como: <code>LEA RAX, [s_Password]</code>. Este é o mapeamento direto 1:1 é o que compõe o painel central <em>&ldquo;Listing&rdquo;</em> que está na meio da imagem anterior.</p>
+<p>O mecanismo que permite transformar assembly para p-code é SLEIGH, ele é um mecanismo de tradução e desmontagem de linguagem de máquina. Ele converte essas instruções assembly para p-code, uma linguagem intermediária universal desenvolvida pela NSA. Isso remove as especificidades do processador (x86, ARM, MIPS) e normaliza as operações lógicas.</p>
+<p>O motor do ghidra rastreia como as informações se movem pelos registradores <code>RAX, RDI, RSI</code> e pela memória. Ele identifica o layout do stack frame da função, abstraindo referências de memória como <code>[RBP - 0x20]</code> para variáveis genéricos (no caso, <code>local_28</code>). Padrões de saltos condicionais do assembly são agrupados para reconstruir estruturas lógicas de alto nível, como bloco <code>if/else</code>.</p>
+<p>Então ele cruza as chamadas externas identificadas com seu banco de dados de bibliotecas padrão (como a <code>generic_clib_64</code>) visível no menu inferior esquerdo. Ao reconhecer uma chamada <code>CALL &lt;EXTERNAL&gt;::__isoc99_scanf</code>, o sistema injeta os tipos de argumentos conhecidos para essa função, inferindo que o conteúdo passado via registrador deve ser tratado como uma string formatada.</p>
+<p>A partir da representação intermediária otimizada e tipada, o ghidra gera uma árvore de sintaxe abstrata (AST) que é convertida no texto formatado em linguagem C exibido no painel direito.</p>
+<p>Agora preciso entender o que se passa no código em C descoberto.</p>
+<h1 id="explicação">Explicação</h1>
+<p><img src="/images/ghidra-descompiled.png" alt="ghidra-descompiled"></p>
+<p>O código é um desafio de validação de senha onde o objetivo é fazer a variável <code>local_28</code> armazenar o valor exato <code>_init</code> para assim exibir <code>Correct!</code>. O <code>iVar1</code> armazena os resultados das comparações <code>local_28</code>, o <code>__isoc99_scanf</code> usa o formato <code>DoYouEven%sCTF</code> ele exige que a entrada comece com a string literal <code>DoYouEven</code> e o que vier em seguida será capturado pelo <code>%s</code> e salvo no buffer <code>local_28</code>.</p>
+<p>O que quer dizer que quando nós digitamos <code>DoYouEventsCTF__dso_handle</code> ou <code>DoYouEven%sCTF__dso_handle</code> como senha ele era armazenado no <code>local_28</code> e comparada, se digitamos <code>__dso_handle</code> se isso aconteceu, as condições foram compridas e ele imprime <code>Try again!</code>.</p>
+<p>Para conseguirmos chegar na resposta o <code>local_28</code> deve conter <code>_init</code>, assim o <code>iVar1</code> vai ser 0 e conseguiremos o <code>Correct!</code>. Porém o <code>scanf</code> tem uma pegadinha da forma que ele lida com a resposta da questão, se você colocar a resposta <code>DoYouEven_initCTF</code> ainda está errado por que o <code>%s</code> lê caracteres de forma contínua até encontrar um espaço em branco ou quebra de linha, então quando você digitar essa resposta, a variável <code>local_28</code> vai armazenar <code>_initCTF</code> inteiro, o que resultará em falha na validação.</p>
+<p>Porque é esperado <code>_init</code> e não <code>_initCTF</code>, o <code>scanf</code> não verifica o valor de retorno para garantir que o sufixo <code>CTF</code> foi realmente lido, isso nos da oportunidade de ignorar a parte do <code>CTF</code> deixando a resposta <code>DoYouEven_init</code>.</p>
+<h1 id="conclusão">Conclusão</h1>
+<p>A senha do arquivo é <code>DoYouEven_init</code>.</p>
+<img src="/images/correct-answer.png" alt="" style="display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+<p>Apesar de ter recebido ajuda do bot involuntariamente, não é como se tivesse roubado ou colocasse a resposta correta, faz parte ter um pouco ajuda durante o aprendizado, fora a indicação da ferramenta o resto foi tudo eu que fiz, algum dia em outro desafio eu vou ter o conhecimento da existência do ghidra que poderá me ajudar nele.</p>
+<p>Espero que tenha ajudado alguém. xD</p>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+    <img class="about__logo" src="http://localhost:1313/images/icons8-console-32.png" alt="Logo">
+<h1 class="about__title">Network and Contact</h1>
+
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/Rafael-LynX" rel="me" aria-label="Github" title="Github"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:RafaelLynX@proton.me" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://br.linkedin.com/in/rafaelvieira-cyber" rel="me" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    <p>Essa é a minha versão de artigo feita sobre à máquina compiled do tryhackme</p>
+    
+        <p>
+            By Rafael Vieira, 
+            2026-09-09
+        </p>
+    
+
+    
+	    <hr>
+	    On this page:
+	    <nav id="TableOfContents"></nav>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p class="copyright">© <a href="https://github.com/Rafael-LynX">Rafael Vieira</a></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> - Based theme <a href="https://github.com/joeroe/risotto">risotto</a> and <a href="https://github.com/xxpromisxx/digio">digio</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

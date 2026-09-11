@@ -26,12 +26,12 @@ Teste comandos
 
 ## risotto
 
-https://themes.gohugo.io/themes/risotto/
+<https://themes.gohugo.io/themes/risotto/>
 
-https://github.com/joeroe/risotto
+<https://github.com/joeroe/risotto>
 
 ## digio
 
-https://themes.gohugo.io/themes/digio-theme/
+<https://themes.gohugo.io/themes/digio-theme/>
 
-https://github.com/danapixels/digio-theme
+<https://github.com/danapixels/digio-theme>

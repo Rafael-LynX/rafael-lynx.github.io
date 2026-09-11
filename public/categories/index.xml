@@ -7,8 +7,29 @@
     <generator>Hugo</generator>
     <language>pt-br</language>
     <copyright>© [Rafael Vieira](https://github.com/Rafael-LynX)</copyright>
-    <lastBuildDate>Fri, 06 Mar 2026 16:34:14 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 15:21:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI-Security</title>
+      <link>http://localhost:1313/categories/ai-security/</link>
+      <pubDate>Wed, 09 Sep 2026 15:21:00 -0300</pubDate>
+      <guid>http://localhost:1313/categories/ai-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybersecurity</title>
+      <link>http://localhost:1313/categories/cybersecurity/</link>
+      <pubDate>Wed, 09 Sep 2026 15:21:00 -0300</pubDate>
+      <guid>http://localhost:1313/categories/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>http://localhost:1313/categories/development/</link>
+      <pubDate>Wed, 09 Sep 2026 15:21:00 -0300</pubDate>
+      <guid>http://localhost:1313/categories/development/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Syntax</title>
       <link>http://localhost:1313/categories/syntax/</link>
