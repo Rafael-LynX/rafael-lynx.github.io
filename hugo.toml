@@ -10,7 +10,6 @@ copyright = "© [Rafael Vieira](https://github.com/Rafael-LynX)"
 [pagination]
 pagerSize = 3
 
-# 
 [params]
 noindex = false
 
@@ -40,18 +39,18 @@ url = "https://br.linkedin.com/in/rafaelvieira-cyber"
 
 # menu que define as paginas aparecerem
 [menu]
-	[[menu.main]]
-		identifier = "about"
-		name = "About"
-		url = "/about/"
-		weight = 1
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 1
 
 
-	[[menu.main]]
-		identifier = "posts"
-		name = "Posts"
-		url = "/posts/"
-		weight = 2
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 2
 
 [taxonomies]
 category = "categories"
@@ -62,32 +61,32 @@ series = "series"
 unsafe = true
 
 [markup]
-	[markup.tableOfContents]
-		startLevel = 2
-		endLevel = 3
-		ordered = true
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+ordered = true
 
 [privacy]
-	[privacy.vimeo]
-		disabled = false
-		simple = true
+[privacy.vimeo]
+disabled = false
+simple = true
 
-	[privacy.x]
-		disabled = false
-		enableDNT = true
-		simple = true
-	
-	[privacy.instagram]
-		disabled = false
-		simple = true
+[privacy.x]
+disabled = false
+enableDNT = true
+simple = true
 
-	[privacy.youtube]
-		disabled = false
-		privacyEnhaced = true
+[privacy.instagram]
+disabled = false
+simple = true
+
+[privacy.youtube]
+disabled = false
+privacyEnhaced = true
 
 [services]
-	[services.instagram]
-		disableInlineCSS = true
-	
-	[services.x]
-		disableInlineCSS = true
+[services.instagram]
+disableInlineCSS = true
+
+[services.x]
+disableInlineCSS = true

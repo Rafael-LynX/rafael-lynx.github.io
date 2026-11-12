@@ -1,85 +1,124 @@
 <div class="terminal-header">
   <div><span class="prompt">$ </span><span class="cmd" id="line1"></span></div>
-  <div><span class="prompt">$ </span><span class="cmd" id="line2"></span><span class="blink" id="cursor" style="display:none">_</span></div>
+  <div>
+    <span class="prompt">$ </span><span class="cmd" id="line2"></span
+    ><span class="blink" id="cursor" style="display: none">_</span>
+  </div>
 </div>
 
 <div class="card-grid">
   <!-- LEFT -->
   <div class="col-left">
     <div class="avatar-box">
-      <img id="avatarImg" src="/images/image1.png" width="96" height="96" style="image-rendering:pixelated;flex-shrink:0;" />
-	<div class="avatar-info">
+      <img
+        id="avatarImg"
+        src="/images/image1.png"
+        width="96"
+        height="96"
+        style="image-rendering: pixelated; flex-shrink: 0"
+      />
+      <div class="avatar-info">
         <div class="avatar-name">Rafael</div>
         <div class="avatar-handle">@rafael-lynx</div>
-        <div class="avatar-bio">Olá! Meu nome é rafael. Aqui é onde documento minha jornada de aprendizado cotidiano em cybersecurity</div>
+        <div class="avatar-bio">
+          Hello! My name is Rafael. Welcome to my personal website, this is
+          where I document my daily learning journey in cybersecurity
+        </div>
       </div>
     </div>
 
-<div class="box">
-      <div class="box-title">projetos:</div>
+    <div class="box">
+      <div class="box-title">Projects:</div>
       <div class="project-row">
         <span>⌨</span>
         <span class="project-name">programming</span>
-        <span class="hp-label">HP</span>
-        <div class="hp-bar-outer"><div class="hp-bar-inner" style="width:85%"></div></div>
+        <span class="hp-label">XP</span>
+        <div class="hp-bar-outer">
+          <div class="hp-bar-inner" style="width: 85%"></div>
+        </div>
       </div>
       <div class="project-row">
         <span>◈</span>
         <span class="project-name">write-ups</span>
-        <span class="hp-label">HP</span>
-        <div class="hp-bar-outer"><div class="hp-bar-inner" style="width:60%"></div></div>
+        <span class="hp-label">XP</span>
+        <div class="hp-bar-outer">
+          <div class="hp-bar-inner" style="width: 60%"></div>
+        </div>
       </div>
       <div class="project-row">
         <span>⚙</span>
         <span class="project-name">tooling</span>
-        <span class="hp-label">HP</span>
-        <div class="hp-bar-outer"><div class="hp-bar-inner" style="width:40%"></div></div>
+        <span class="hp-label">XP</span>
+        <div class="hp-bar-outer">
+          <div class="hp-bar-inner" style="width: 40%"></div>
+        </div>
       </div>
     </div>
   </div>
 
-<!-- RIGHT -->
+  <!-- RIGHT -->
   <div class="col-right">
     <div class="box">
       <div class="box-title">status</div>
-      <div class="status-text">praticando cybersec e<br>tomando café ☕</div>
+      <div class="status-text">
+        Diving Deeper into cybersecurity while<br />having coffee ☕
+      </div>
     </div>
 
     <div class="box">
-      <div class="box-title">assistindo</div>
+      <div class="box-title">Watching</div>
       <div class="play-btn">▶</div>
-          <a href="https://www.crunchyroll.com/pt-br/series/GRMG8ZQZR/one-piece" target="_blank"> One Piece</a>
+      <a
+        href="https://www.crunchyroll.com/pt-br/series/GRMG8ZQZR/one-piece"
+        target="_blank"
+      >
+        One Piece</a
+      >
     </div>
 
     <div class="box">
       <div class="box-title">Stack/Toolbox</div>
       <ul class="now-list">
         <li>🐧<a href="https://linuxmint.com/" target="_blank"> linux </a></li>
-        <li>☕<a href="https://dev.java/" target="_blank"> java </a></li>
+        <li>🐍<a href="https://dev.java/" target="_blank"> python </a></li>
         <li>🐶<a href="https://snyk.io/" target="_blank"> synk </a></li>
-        <li>🔍<a href="https://www.sonarqube.org/" target="_blank"> sonarqube </a></li>
+        <li>
+          🔍<a href="https://www.sonarqube.org/" target="_blank"> sonarqube </a>
+        </li>
+        <li>☁️<a href="https://aws.amazon.com/" target="_blank"> AWS </a></li>
+        <li>
+          🤖<a href="https://aisec.university/" target="_blank">
+            AI Security
+          </a>
+        </li>
+        <li>🖥️<a href="https://au.apisec.ai/" target="_blank"> AppSec </a></li>
       </ul>
     </div>
   </div>
 </div>
 
 <script>
-// ── Terminal typing ──
+  // ── Terminal typing ──
   const lines = [
-    'whoami && cat profile.json',
-    'identity verified. loading profile...'
+    "whoami && cat profile.json",
+    "identity verified. loading profile...",
   ];
 
-  let li = 0, ci = 0;
-  const cursor = document.getElementById('cursor');
+  let li = 0,
+    ci = 0;
+  const cursor = document.getElementById("cursor");
 
   function type() {
-    if (li >= lines.length) { cursor.style.display = 'inline'; return; }
-    const el = document.getElementById('line' + (li + 1));
+    if (li >= lines.length) {
+      cursor.style.display = "inline";
+      return;
+    }
+    const el = document.getElementById("line" + (li + 1));
     el.textContent = lines[li].slice(0, ci + 1);
     ci++;
     if (ci >= lines[li].length) {
-      li++; ci = 0;
+      li++;
+      ci = 0;
       setTimeout(type, 400);
     } else {
       setTimeout(type, 45);
